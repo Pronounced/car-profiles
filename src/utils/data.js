@@ -19,7 +19,8 @@ export const cars = [
     mileage: 11,
     image:
       "https://www.cstatic-images.com/supersized/in/v1/36000411/3N1CP5DV6LL573586/71a3e7ab945fbfd858c69965e591c95d.jpg",
-  },
+    favorite: true
+    },
   {
     name: "2021 BMW X3 xDrive30i",
     price: 49085,
@@ -40,7 +41,8 @@ export const cars = [
     mileage: 5,
     image:
       "https://www.cstatic-images.com/supersized/in/v1/15416108/5UXTY5C03M9F93337/5a00d33ec4e7f967f25221b25663e38a.jpg",
-  },
+    favorite: false
+    },
   {
     name: "2021 Acura TLX Technology",
     price: 44525,
@@ -61,7 +63,8 @@ export const cars = [
     mileage: 9,
     image:
       "https://www.cstatic-images.com/supersized/in/v1/429408/19UUB6F40MA005192/a3a990d19b39d5326f499f16472b30ec.jpg",
-  },
+    favorite: true
+    },
   {
     name: "2021 Chevrolet Silverado 2500 LTZ",
     price: 73744,
@@ -82,5 +85,6 @@ export const cars = [
     mileage: 0,
     image:
       "https://www.cstatic-images.com/supersized/in/v1/413644/1GC4YPEY8MF198041/c100548f537e70d8cbf8408aac2782f9.jpg",
+    favorite: true
   },
 ];
