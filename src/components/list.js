@@ -42,23 +42,10 @@ class List extends React.Component {
   }
 
   setFavorite = (event) => {
-    event.preventDefault();
-    for(var i in cars)
-    {
-      if(cars[i].vin === event.target.key)
-      {
-        cars[i].favorite = event.target.value;
-      }
-    }
-    return this.state.cars.filter(item => item.vin === event.target.key);
-    // var favArr = this.state.cars.filter(item => 
-    //   item === event.target.key
-    // )
-    // favArr[0].favorite = event.target.value;
-
-    // var car = {...this.state.cars};
-    // car[event.target.name] = event.target.value;
-    // this.setState({car});
+    const { cars } = this.state;
+    const { id } = event.target;
+    cars[id].favorite = !this.state.cars[id].favorite;
+    this.setState({ cars });
   }
 
   render() {
@@ -80,20 +67,21 @@ class List extends React.Component {
                 <th>Price</th>
                 <th>Seller</th>
                 <th>Color</th>
-                {/* <th>Favorite</th> */}
+                <th>Favorite</th>
               </tr>
             </thead>
             <tbody>
-              {this.state.cars.map((car) =>
+              {
+                this.state.cars.map((car, i) =>
                   <tr key={car.vin}>
                     <td>{car.name}</td>
                     <td>{car.price}</td>
                     <td>{car.seller}</td>
                     <td>{car.color}</td>
-                    {/* <td><input name="favorite" type="text" onChange={this.setFavorite} value={car.favorite}></input></td>
-                    <td><input name="favorite" type="checkbox" onChange={this.setFavorite}></input></td> */}
+                    <td><input id={i} name={car.name} type="checkbox" onClick={this.setFavorite} checked={!!car.favorite}></input></td>
                   </tr>
-              )}
+                )
+              }
             </tbody>
           </table>
           <h2>Conditionally Render List of Items or Form to Add Car</h2>

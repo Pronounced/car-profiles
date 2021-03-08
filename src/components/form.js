@@ -24,19 +24,19 @@ class Form extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <p>
           <label>Name </label>
-          <input name="name" onChange={this.updateState} />
+          <input name="name" onChange={this.updateState} required/>
         </p>
         <p>
           <label>Price </label>
-          <input name="price" onChange={this.updateState}/>
+          <input name="price" onChange={this.updateState} required/>
         </p>
         <p>
           <label>Seller </label>
-          <input name="seller" onChange={this.updateState}/>
+          <input name="seller" onChange={this.updateState} required/>
         </p>
         <p>
           <label>Color </label>
-          <input name="color" onChange={this.updateState}/>
+          <input name="color" onChange={this.updateState} required/>
         </p>
         <button type="submit">Submit</button>
       </form>
